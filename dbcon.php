@@ -1,5 +1,7 @@
 <?php 
 session_start();
+?>
+<?php 
 $con = mysqli_connect("localhost","root","","blog");
 
 if(!$con){

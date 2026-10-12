@@ -15,13 +15,8 @@ session_start();
   </head>
   <body>
     <div class="contaier  mt-5">
-         <?php include('message.php'); ?>
-
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-             <strong>Hey!</strong> je suis un message.
-             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-
+        <?php include('message.php'); ?>
+        
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
