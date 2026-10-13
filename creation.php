@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,6 +12,10 @@ session_start();
   </head>
   <body>
     <div class="contaier  mt-5">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>hey!</strong> je suis un message 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>;
         <?php include('message.php'); ?>
         
         <div class="row">
@@ -22,7 +23,7 @@ session_start();
                 <div class="card">
                     <div class="card-header">
                     <h4>AJOUTER UN ETUDIANT 
-                        <a href="index.php" class="btn btn.danger float-end">BACK</a>
+                        <a href="index.php" class="btn btn-primary float-end">RETOUR</a>
                     </h4>
                 </div>
                 <div class="card-body">

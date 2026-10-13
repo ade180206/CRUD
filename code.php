@@ -9,7 +9,7 @@ if(isset($_POST['enregistrer']))
     $telephone = mysqli_real_escape_string($con,$_POST['telephone']);
     $ecole = mysqli_real_escape_string($con,$_POST['ecole']);
 
-    $query = "INSERT INTO etudiant(NOM & PRENOMS, EMAIL , TELEPHONE , ECOLE) VALUES ('$nom','$email','$telephone','$ecole')";
+    $query = "INSERT INTO etudiant(NOM_PRENOMS, EMAIL , TELEPHONE , ECOLE) VALUES ('$nom','$email','$telephone','$ecole')";
     $query_run= mysqli_query($con,$query);
     if($query_run)
     {
