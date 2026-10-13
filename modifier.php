@@ -2,7 +2,7 @@
 require_once('dbcon.php');
  ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,59 +14,67 @@ require_once('dbcon.php');
     <title>modification d'etudiant </title>
   </head>
   <body>
-    <div class="contaier  mt-5">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>hey!</strong> je suis un message 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>;
-        <?php include('message.php'); ?>
+    <div class="container  mt-5">
+       
+        
         
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                    <h4>MODIFIER UN ETUDIANT 
+                    <h4> MODIFIER UN ETUDIANT 
                         <a href="index.php" class="btn btn-primary float-end">RETOUR</a>
                     </h4>
                 </div>
                 <div class="card-body">
                     <?php
-                    if (isset($_GET['ID'])) {
-                        $etudiant_id = mysqli_real_escape_string($con, $_GET['ID']);
-                        $query = "SELECT * FROM etudiant WHERE ID = '$etudiant_id' ";
+                    if (isset($_GET['id'])) {
+                        $etudiant_id = mysqli_real_escape_string($con, $_GET['id']);
+                        $query = "SELECT * FROM etudiant WHERE id = '$etudiant_id' ";
                         $query_run = mysqli_query($con, $query);
+                        
                         if(mysqli_num_rows($query_run) > 0 )
                             {
                                 $etudiant = mysqli_fetch_array($query_run) ;
-                                print_r($etudiant) ; 
-                            }
-                            else
-                                {
-                                    echo " <h4>aucun ID trouvé </h4>" ;
-                                }
-                        }
+                         
                         ?>
 
                     <form action="code.php" method="POST">
+                        <input type="hidden" name="etudiant_id" value="<?= $etudiant['ID']; ?>">
+
                         <div class="mb-3">
-                            <label for="name">NOM & PRENOMS</label>
-                            <input type="text" name="nom" class="form-control">
+                            <label for="nom">NOM & PRENOMS</label>
+                            <input type="text" id="nom" name="nom" class="form-control"
+                                   value="<?= htmlspecialchars($etudiant['NOM_PRENOMS']); ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="name">EMAIL</label>
-                            <input type="text" name="email" class="form-control">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                   value="<?= htmlspecialchars($etudiant['EMAIL']); ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="name">TELEPHONE</label>
-                            <input type="text" name="telephone" class="form-control">
+                            <label for="telephone">TELEPHONE</label>
+                            <input type="text" id="telephone" name="telephone" class="form-control"
+                                   value="<?= htmlspecialchars($etudiant['TELEPHONE']); ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="name">ECOLE</label>
-                            <input type="text" name="ecole" class="form-control">
+                            <label for="ecole">ECOLE</label>
+                            <input type="text" id="ecole" name="ecole" class="form-control"
+                                   value="<?= htmlspecialchars($etudiant['ECOLE']); ?>">
                         </div>
                         <div class="mb-3">
-                            <button type="submit" name="modifier" class="btn btn-primary">MODIFIER</button>
+                            <button type="submit" name="modifier" class="btn btn-primary"> MODIFIER </button>
+                        </div>
                     </form>
+                <?php
+                    }
+                    
+                }
+                else
+                {
+                    echo "<h5>Aucun ID fourni pour l'etudiant </h5>";
+                }
+                ?>
                     </div>
                 </div>
             </div>

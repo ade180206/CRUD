@@ -1,5 +1,6 @@
+<?php session_start() ;?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,10 +13,8 @@
   </head>
   <body>
     <div class="contaier  mt-5">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>hey!</strong> je suis un message 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>;
+        
+        
         <?php include('message.php'); ?>
         
         <div class="row">
@@ -29,23 +28,23 @@
                 <div class="card-body">
                     <form action="code.php" method="POST">
                         <div class="mb-3">
-                            <label for="name">NOM & PRENOMS</label>
+                            <label >NOM & PRENOMS</label>
                             <input type="text" name="nom" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="name">EMAIL</label>
+                            <label >EMAIL</label>
                             <input type="text" name="email" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="name">TELEPHONE</label>
+                            <label >TELEPHONE</label>
                             <input type="text" name="telephone" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label for="name">ECOLE</label>
+                            <label >ECOLE</label>
                             <input type="text" name="ecole" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <button type="submit" name="enregistrer" class="btn btn-primary">ENREGISTRER</button>
+                            <button type="submit" name="enregistrer_etudiant" class="btn btn-primary">ENREGISTRER</button>
                     </form>
                     </div>
                 </div>
