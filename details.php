@@ -38,7 +38,7 @@ require_once('dbcon.php');
                                 $etudiant_id = mysqli_fetch_array($query_run) ;
                             }    
                          
-                        ?>
+                        ?> 
 
                     
                         
