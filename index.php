@@ -52,7 +52,7 @@
                         foreach ($query_run as $etudiant)
                         {
                             // echo etudiant 
-                          ?>
+                          ?> 
                             <tr>
                               <td><?= $etudiant['ID']; ?></td>
                               <td><?= $etudiant['NOM_PRENOMS']; ?></td>

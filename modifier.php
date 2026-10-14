@@ -13,7 +13,7 @@ require_once('dbcon.php');
 
     <title>modification d'etudiant </title>
   </head>
-  <body>
+  <body> 
     <div class="container  mt-5">
        
         <?php include('message.php') ; ?>

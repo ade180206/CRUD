@@ -5,7 +5,7 @@ if(isset($_SESSION['message'])) :
             <strong>hey!</strong> <?= $_SESSION['message']; ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-<?php
+<?php 
     unset($_SESSION['messaage']); 
     endif;
 ?>

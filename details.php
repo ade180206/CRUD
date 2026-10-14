@@ -59,13 +59,13 @@ require_once('dbcon.php');
                             <label for="telephone">TELEPHONE</label>
                                <p class="form-control">
                                      <?= htmlspecialchars($etudiant_id['TELEPHONE']); ?>
-                                   </p>
+                                </p>
                         </div>
                         <div class="mb-3">
                             <label for="ecole">ECOLE</label>
                             <p class="form-control">
-                                     <?= htmlspecialchars($etudiant_id['ECOLE']); ?>
-                                   </p>
+                                <?= htmlspecialchars($etudiant_id['ECOLE']); ?>
+                            </p>
                         </div>
                    
                 <?php

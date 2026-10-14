@@ -35,7 +35,7 @@
                             <label >EMAIL</label>
                             <input type="text" name="email" class="form-control">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3"> 
                             <label >TELEPHONE</label>
                             <input type="text" name="telephone" class="form-control">
                         </div>
