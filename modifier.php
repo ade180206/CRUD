@@ -28,46 +28,47 @@ require_once('dbcon.php');
                 </div>
                 <div class="card-body">
                     <?php
-                    if (isset($_GET['id'])) {
-                        $etudiant_id = mysqli_real_escape_string($con, $_GET['id']);
+                    if (isset($_GET['ID'])) {
+                        $etudiant_id = mysqli_real_escape_string($con, $_GET['ID']);
                         $query = "SELECT * FROM etudiant WHERE id = '$etudiant_id' ";
                         $query_run = mysqli_query($con, $query);
                         
                         if(mysqli_num_rows($query_run) > 0 )
                             {
-                                $etudiant = mysqli_fetch_array($query_run) ;
+                                $etudiant_id = mysqli_fetch_array($query_run) ;
+                            }    
                          
                         ?>
 
                     <form action="code.php" method="POST">
-                        <input type="hidden" name="etudiant_id" value="<?= $etudiant['ID']; ?>">
+                        <input type="hidden" name="etudiant_id" value="<?= $etudiant_id['ID']; ?>">
 
                         <div class="mb-3">
                             <label for="nom">NOM & PRENOMS</label>
                             <input type="text" id="nom" name="nom" class="form-control"
-                                   value="<?= htmlspecialchars($etudiant['NOM_PRENOMS']); ?>">
+                                   value="<?= htmlspecialchars($etudiant_id['NOM_PRENOMS']); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="email">EMAIL</label>
                             <input type="email" id="email" name="email" class="form-control"
-                                   value="<?= htmlspecialchars($etudiant['EMAIL']); ?>">
+                                   value="<?= htmlspecialchars($etudiant_id['EMAIL']); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="telephone">TELEPHONE</label>
                             <input type="text" id="telephone" name="telephone" class="form-control"
-                                   value="<?= htmlspecialchars($etudiant['TELEPHONE']); ?>">
+                                   value="<?= htmlspecialchars($etudiant_id['TELEPHONE']); ?>">
                         </div>
                         <div class="mb-3">
                             <label for="ecole">ECOLE</label>
                             <input type="text" id="ecole" name="ecole" class="form-control"
-                                   value="<?= htmlspecialchars($etudiant['ECOLE']); ?>">
+                                   value="<?= htmlspecialchars($etudiant_id['ECOLE']); ?>">
                         </div>
                         <div class="mb-3">
                             <button type="submit" name="modifier" class="btn btn-primary"> MODIFIER </button>
                         </div>
                     </form>
                 <?php
-                    }
+                    
                     
                 }
                 else
