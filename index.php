@@ -1,5 +1,6 @@
 <?php
-    require_once 'dbcon.php';
+ session_start();
+ require 'dbcon.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,8 +61,11 @@
                               <td><?= $etudiant['ECOLE']; ?></td>
                               <td>
                                 <a href="modifier.php?ID=<?=$etudiant['ID']; ?>" class="btn btn-success btn-sm">modifier</a>
-                                <a href="" class="btn btn-danger btn-sm">supprimer</a>
-                                <a href="" class="btn btn-info btn-sm">details</a>
+                                <a href="details.php?ID=<?=$etudiant['ID']; ?>" class="btn btn-info btn-sm">details</a>
+                                <form action="code.php" method="POST">
+                                 <button type="submit" name="supprimer" value= "<?=$etudiant['ID']; ?>" class="btn btn-danger btn-sm">supprimer</button>
+                                </form>
+
                               </td>
                             </tr>
                           <?php
